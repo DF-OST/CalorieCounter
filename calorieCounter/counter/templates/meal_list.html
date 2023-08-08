@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for meal in meals %}
+    {% if meal.consumedToday %}
+        <article class="post">
+            <h2><a href="{% url 'meal_detail' pk=meal.pk %}">{{ meal.name }}</a></h2>
+            <time class="date">
+                {{ meal.consumed_date }}
+            </time>
+            <p>{{ meal.calorie_count|linebreaksbr }} kcal</p>
+        </article>
+    {% endif %}
+    {% endfor %}
+    <form method="POST" class="date-form" action="go/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>Check history:</p>
+        <input type="date" id="date" name="date">
+        <button type="submit">Save</button>
+    </form>
+
+    <br><br>
+    <a href="go/history">Check Complete History</a>
+{% endblock %}
