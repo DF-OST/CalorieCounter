@@ -63,7 +63,7 @@ def meal_new(request):
             return redirect('meal_detail', pk=meal.pk)
     else:
         form = PostForm()
-    return render(request, 'meal_edit.html', {'form': form})
+    return render(request, 'meal_new.html', {'form': form})
 
 def meal_edit(request, pk):
     meal = get_object_or_404(Meal, pk=pk)
