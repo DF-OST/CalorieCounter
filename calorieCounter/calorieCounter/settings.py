@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jncaqbu*hq7a)u0yjt5%#yw@@73p91vd0j853hid$m(ghffij6
 DEBUG = True
 
 ALLOWED_HOSTS = [ '127.0.0.1',
-                 'dfost.pythonanywhere.com',]
+                 'dfost.pythonanywhere.com']
 
 
 # Application definition
